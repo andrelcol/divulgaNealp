@@ -6,20 +6,23 @@
     <link rel="stylesheet" href="css/w3.css"> 
     <script src="componentes/navbar.js"></script>
     <script src="componentes/translation.js"></script>
+    <script src="js/funcoes.js"></script>
 
 <body>
-        <!-- Navbar (sit on top) -->
-        <navbar-component></navbar-component>
+        <!-- Navbar (sit on top <navbar-component></navbar-component>) -->
+      
     <!-- Conteúdo da página -->   
     <h1>Bem-Vindo</h1>
-    <p>
+    <p id="description">
         Esta é uma plataforma desenvolvida com o propósito de divulgar projetos em fazer de experimentação. Aqui você pode contribuir realizando esses experimentos...
     </p>
         <!-- Seção de experimentos -->
     <div class="w3-container w3-padding-32" id="experimentos">
             <h3 id="experimentos-header" class="w3-border-bottom w3-border-light-grey w3-padding-16">Experimentos</h3>
         </div>
-    
+        
+        <!--
+
         <div class="w3-row-padding">
             
             <div class="w3-col 13 m6 w3-margin-bottom">
@@ -34,7 +37,56 @@
                 </a>
             </div>
     
+            <div class="w3-col 13 m6 w3-margin-bottom">
+                <p>O experimento a seguir é um projeto desenvolvido... </p>
+                <a href="https://umfzbexz9j.cognition.run/">
+                    <div class="w3-display-container" style="border:2px solid black">
+                        <div id="pcibex" class="project-title w3-display-topleft w3-padding">
+                        </div>
+                        <img src="assests/pcibex.png" alt="PCIbex teste"
+                            style="width:50%;">
+                    </div>
+                </a>
+            </div>
+    
         </div>
+        -->
+        <form>
+            <table>
+                <caption>Cadastro de novos projetos</caption>
+                <!--Nome do projeto-->
+                <tr>
+                    <td class="alinharRotulos">Nome do projeto:</td>
+                    <td><input id="txtNomeProjeto" type="text"></td>
+                </tr>
+                <!--Código do projeto-->
+                <tr>
+                    <td class="alinharRotulos">Descrição do projeto:</td>
+                    <td><input id="txtDescProjeto" type="text"></td>
+                </tr>
+
+                <tr>
+                    <td class="alinharRotulos">Link do projeto:</td>
+                    <td><input id="txtLinkProjeto" type="text"></td>
+                </tr>
+
+                <!--Botoes-->
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="button" value="Adicionar" class="alinhaBtns" onclick="validarProduto('txtNomeProjeto','txtDescProjeto','txtLinkProjeto')">
+                        <input type="button" value="Ver projetos" class="alinhaBtns" onclick="window.open('verEstoque.html','_self')">
+                        <input type="reset" value="Limpar" class="alinhaBtns">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    <script>
+        TRANSLATION.add(
+            '#description',
+            'Esta é uma plataforma desenvolvida com o propósito de divulgar projetos em fazer de experimentação. Aqui você pode contribuir realizando esses experimentos...',
+            'This is a platform developed with the purpose of disseminating experimental projects. Here you can contribute by carrying out these experiments...'
+        )
+    </script>
 </body>
 
 
